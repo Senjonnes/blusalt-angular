@@ -1,11 +1,13 @@
 <app-main [template]="content"></app-main>
 <ng-template #content>
-  <div class="w-full grid xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-6 pb-10">
+  <div
+    class="w-full grid xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-6 pb-10"
+  >
     <ng-container *ngFor="let frame of frames">
       <app-analytics-card [frame]="frame"></app-analytics-card>
     </ng-container>
   </div>
-  <div class="w-full grid xl:grid-cols-4 grid-cols-1 gap-6 pb-6">
+  <div class="w-full grid xl:grid-cols-4 grid-cols-1 gap-6 pb-6 bg-white">
     <div
       class="xl:col-span-3 rounded-[10px] relative cursor-pointer box-shadow trans-3"
     >
@@ -51,26 +53,63 @@
       </div>
     </div>
   </div>
-  <div class="w-full grid xl:grid-cols-4 grid-cols-1 gap-6 pb-10">
+  <div class="w-full grid xl:grid-cols-4 grid-cols-1 gap-6 pb-10 bg-white">
     <div
       class="xl:col-span-3 rounded-[10px] relative cursor-pointer box-shadow trans-3"
     >
       <div class="px-4 pt-4 pb-2">
-        <div class="flex gap-x-2">
-          <div class="mt-2">
-            <h4
-              class="text-heading-xs font-semibold mb-1 text-[#111111] leading-[1.1]"
-            >
-              Test
-            </h4>
-            <p class="text-body-lg leading-[1.1] text-[#aaaaaa]">Test</p>
-            <div class="mt-5 mb-2 flex items-center gap-x-2">
-              <img src="assets/images/wema-success.png" class="h-4 w-4" />
-              <span class="text-[#4BDE97]">20</span>
-              <span class="text-[#bdbdbd]">Last month</span>
-            </div>
-          </div>
-        </div>
+        <div class="ml-3 text-body-xl my-4 font-medium">Recent Requests</div>
+        <nz-table #basicTable [nzData]="dataSet" [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <th>Name/Email</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>
+                <div class="flex items-center gap-x-2">
+                  <div class="h-10 w-10 rounded-lg bg-[#d8d8d8]"></div>
+                  <div>
+                    <p class="text-body-lg">
+                      {{ data.name }}
+                    </p>
+                    <p class="text-body-sm text-[#8392ab]">
+                      {{ data.email }}
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="text-[#8392ab]">{{ data.type }}</p>
+              </td>
+              <td>
+                <p
+                  class="px-2 py-1 w-fit rounded-xl"
+                  [ngClass]="
+                    data.status === 'Pending'
+                      ? 'text-[#ffb647] bg-[#fff8ea]'
+                      : 'text-[#64b67f] bg-[#eff8f2]'
+                  "
+                >
+                  {{ data.status }}
+                </p>
+              </td>
+              <td>
+                {{ data.date }}
+              </td>
+              <td>
+                <div class="p-2 rounded-full bg-[#eef6fe] w-fit">
+                  <img src="assets/images/wema-next.png" class="h-3" />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
       </div>
     </div>
   </div>

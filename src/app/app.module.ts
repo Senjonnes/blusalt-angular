@@ -9,6 +9,8 @@ import { MainComponent } from './layouts/main/main.component';
 import { AnalyticsCardComponent } from './components/analytics-card/analytics-card.component';
 
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -29,6 +31,8 @@ registerLocaleData(en);
     AppRoutingModule,
     NzDropDownModule,
     NzIconModule,
+    NzTableModule,
+    NzDividerModule,
     BrowserAnimationsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'), // or import('./path-to-my-custom-echarts')
