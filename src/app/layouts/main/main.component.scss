@@ -61,33 +61,12 @@
   }
 }
 
-.disable-div {
-  pointer-events: none;
-  cursor: not-allowed;
-  color: #999999 !important;
-}
-
 .menu:hover,
 .menu:active,
 .menu:focus {
   outline: none !important;
   color: #ffffff !important;
   background: #a3268e;
-}
-
-.menu:hover .user-alt,
-.menu:active .user-alt,
-.menu:focus .user-alt {
-  fill: #010833 !important;
-}
-
-.clip-art {
-  position: absolute;
-}
-
-.main-btn {
-  color: #000000 !important;
-  font-weight: 500 !important;
 }
 
 .main-content {

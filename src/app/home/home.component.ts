@@ -20,7 +20,6 @@ interface Data {
 })
 export class HomeComponent implements OnInit {
   frames: Frame[] = FRAMES;
-
   chartOption: EChartsOption = {
     legend: {},
     tooltip: {
