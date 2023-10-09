@@ -1,0 +1,46 @@
+<div class="rounded-[10px] relative cursor-pointer box-shadow trans-3">
+  <div class="px-4 pt-4 pb-2">
+    <div class="flex gap-x-2">
+      <h5
+        class="h-16 w-16 {{
+          frame.bgClass
+        }} rounded-full flex items-center justify-center"
+      >
+        <img [src]="frame.icon" class="h-6 w-6" />
+      </h5>
+      <div class="mt-2">
+        <h4
+          class="text-heading-xs font-semibold mb-1 text-[#111111] leading-[1.1]"
+        >
+          {{ frame.total }}
+        </h4>
+        <p class="text-body-lg leading-[1.1] text-[#aaaaaa]">
+          {{ frame.label }}
+        </p>
+        <div class="mt-5 mb-2 flex items-center gap-x-2">
+          <img
+            [src]="
+              frame.state === '0'
+                ? 'assets/images/wema-success.png'
+                : frame.state === '1'
+                ? 'assets/images/wema-failed.png'
+                : 'assets/images/wema-waiting.png'
+            "
+            class="h-4 w-4"
+          />
+          <span
+            [ngClass]="
+              frame.state === '0'
+                ? 'text-[#4BDE97]'
+                : frame.state === '1'
+                ? 'text-[#F26464]'
+                : 'text-[#FFB647]'
+            "
+            >{{ frame.rate }}</span
+          >
+          <span class="text-[#bdbdbd]">Last month</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

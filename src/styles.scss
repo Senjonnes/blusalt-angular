@@ -1,1 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.trans {
+  transition: all 0.1s ease;
+}
+
+.trans-2 {
+  transition: all 0.2s ease;
+}
+
+.trans-3 {
+  transition: all 0.3s ease;
+}
+
+.trans-4 {
+  transition: all 0.4s ease;
+}
+
+.filter-modal {
+  overflow: hidden;
+  padding: 0px !important;
+  top: 8rem !important;
+  height: calc(100vh - 8rem) !important;
+  position: absolute !important;
+  width: 400px !important;
+  right: 0px !important;
+  box-shadow: rgba(0, 0, 0, 0.12) -8px 0px 40px 0px !important;
+  .ant-modal-content {
+    height: 100%;
+  }
+  .ant-modal-body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0px !important;
+  }
+}
+
+.frame-modal {
+  padding: 0px !important;
+  top: 0rem !important;
+  height: 100vh !important;
+  position: absolute !important;
+  width: 74% !important;
+  right: 0px !important;
+  .ant-modal-content {
+    height: 100%;
+  }
+  .ant-modal-body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0px !important;
+    // overflow: auto!important;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutFromRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.slide-in-from-right {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.slide-out-from-right {
+  animation: slideOutFromRight 0.5s ease-out;
+}
+
+.modal-input {
+  border-radius: 12px !important;
+  padding: 12px !important;
+}
+
+.modal-input:hover {
+  border-color: #111111 !important;
+}
+
+.modal-input:disabled {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  cursor: default !important;
+}
+
+.modal-checkbox .ant-checkbox-disabled + span {
+  cursor: default !important;
+}
+
+.modal-checkbox .ant-checkbox-disabled .ant-checkbox-inner {
+  background-color: #ffffff !important;
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.modal-checkbox .ant-checkbox-disabled .ant-checkbox-inner:hover {
+  border-color: #111111 !important;
+  cursor: default;
+}
+
+.modal-btn {
+  position: absolute;
+  bottom: 24px;
+  width: 100%;
+  left: 0px;
+  padding: 24px 24px 0px 24px;
+}
+
+.modal-btn button {
+  width: 100% !important;
+  border-radius: 12px !important;
+  padding: 24px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.framer-btn {
+  bottom: 24px;
+  width: 100%;
+  left: 0px;
+}
+
+.framer-btn button {
+  border: none !important;
+  width: 100% !important;
+  border-radius: 12px !important;
+  padding: 24px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    95.006deg,
+    rgb(211, 59, 80) 0%,
+    rgb(198, 47, 101) 100%
+  ) !important;
+  color: #ffffff !important;
+}
+
+.modal-btn button:disabled {
+  color: #ffffff !important;
+  background: #efb2ba !important;
+  border: none !important;
+  cursor: default !important;
+}
